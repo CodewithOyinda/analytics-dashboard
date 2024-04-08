@@ -2,7 +2,9 @@ import React from 'react'
 
 const Sidebar = () => {
   return (
-    <div>Sidebar</div>
+    <div className=' border border-[#F5F5F5] w-[150px]'>
+     sidebar
+    </div>
   )
 }
 
