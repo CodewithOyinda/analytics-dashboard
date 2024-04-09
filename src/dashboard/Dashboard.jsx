@@ -7,13 +7,13 @@ import Sidebar from './Sidebar';
 
 const Dashboard = () => {
   return (
-    <div className='flex w-full relative pt-[15px] bg-[#f7f8fa]'>
-    <div className='w-100px z-[20] flex h-full'>
+    <div className='flex w-full relative  bg-[#f7f8fa]'>
+    <div className='z-[20] flex h-full'>
         <Sidebar/>
     </div>
-      <div className='flex justify-between flex-row items-center'>
+      <div className='flex justify-between flex-row items-center p-[15px] h-[100px]'>
        <p>Dashboard</p>
-       <div className='flex items-center'>
+       <div className='flex items-center relative'>
        <CiSearch  className=''/>
        <input
        className='border w-[300px] h-[40px] p-[15px] rounded-[3rem]'
