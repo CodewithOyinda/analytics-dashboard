@@ -1,4 +1,4 @@
-import React from 'react';
+import {useState, useEffect} from 'react';
 import vector from '../dashboard/assets/Vector.svg';
 import category from '../dashboard/assets/category.svg';
 import trend from '../dashboard/assets/trend-up.svg';
@@ -14,6 +14,64 @@ import setting from '../dashboard/assets/setting-2.svg';
 
 
 const Sidebar = () => {
+
+    const [theme, setTheme] = useState(
+        localStorage.getItem("theme") ? localStorage.getItem("theme") : "system"
+      );
+      const element = document.documentElement
+      const darkQuery = window.matchMedia("(prefers-color-scheme: dark)")
+      const options = [
+        {
+          icon: "sunny" ,
+          text: "light"
+        },
+        {
+          icon: "moon" ,
+          text: "dark" 
+        },
+        // {
+        //   icon: "desktop-outline" ,
+        //   text: "system" 
+        // }
+      ];
+    //   function onWindowMatch() {
+    //     if (localStorage.theme === 'dark' || (!("theme" in localStorage) && darkQuery.matches)
+    //      ){
+    //      element.classList.add("dark")
+    
+    //     }else{
+    //     element.classList.remove("dark")
+    //     }
+    //   }
+    //   onWindowMatch();
+    
+      useEffect (() => {
+         switch (theme){
+         case 'dark':
+            element.classList.add('dark');
+            localStorage.setItem('theme', 'dark')
+            break;
+          case 'light':
+            element.classList.remove('dark');
+            localStorage.setItem('theme', 'light')
+            break;
+         default:
+          localStorage.removeItem('theme')
+          onWindowMatch()
+         break;
+         }
+      },[theme]);
+    
+    darkQuery.addEventListener('change', (e) =>{
+      if(!("theme" in localStorage)){
+       if(e.matches){
+        element.classList.add("dark");
+       }else{
+        element.classList.remove("dark");
+       }
+      }
+    })
+
   return (
     <div className='w-[80px] border border-[#F5F5F5] flex justify-center items-center flex-col gap-[1.5rem]'>
         <div>
@@ -36,6 +94,22 @@ const Sidebar = () => {
         </div>
         <div>
          <img src={info} alt='info'/>
+        </div>
+        <div className='top-1 right-10 duration-100 dark:bg-slate-800 border border-[#e6e6e6] md:border-visible border-hidden rounded flex flex-col items-center'>
+          {
+            options?.map(opt=>(
+              <button 
+              key={opt.text} 
+              onClick={()=> setTheme(opt.text)}
+              className={`md:w-8 md:h-8 w-5 h-5 md:leading-9 leading-6 md:text-xl text-[16px] rounded-full m-1 ${
+                theme === opt.text && 'text-[#b2abab] bg-[#34caa5] rounded-[0.2rem]'
+              } ${theme === 'light' && opt.text === 'light' && 'text-[#fafafa] bg-[#fee6ed] rounded-[0.2rem]'}`}
+            >
+              <ion-icon name={opt.icon}></ion-icon>
+              </button>
+            ))
+          }
+          
         </div>
         <div>
          <img src={arrow} alt='arrow'/>
