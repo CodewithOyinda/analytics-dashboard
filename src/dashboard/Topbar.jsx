@@ -6,32 +6,33 @@ import { CgProfile } from "react-icons/cg";
 
 const Topbar = () => {
   return (
-    <div className='flex justify-between flex-row items-center p-[15px] h-[100px] fixed border-b-[#edeef0]'>
-         <p>Dashboard</p>
-       <div className='flex items-center relative'>
-       <CiSearch  className=''/>
-       <input
-       className='border w-[300px] h-[40px] p-[15px] rounded-[3rem]'
-       type='text'
-       placeholder='Search...'
-       />
-       </div>
-       <div className='flex items-center gap-[0.5rem]'>
-       <MdOutlineCalendarMonth />
-       <p> April 8, 2024</p>
-       </div>
-       <button className='border border-[#e6e8e9] rounded-[50%] w-[40px] h-[40px] flex items-center justify-center'><IoNotificationsOutline className='w-[20px] h-[20px]'/></button>
-       
-       <button className='border border-[#e6e8e9] rounded-[3rem] w-[250px] h-[70px] flex items-center justify-center'>
+    <div className='flex justify-between items-center px-6 h-16 ml-[20px] fixed top-0 left-14 right-0 shadow border-b border-gray-200'>
+      <p>Dashboard</p>
+      <div className='flex items-center relative'>
+        <CiSearch />
+        <input
+          className='border w-64 h-10 p-2 rounded-lg'
+          type='text'
+          placeholder='Search...'
+        />
+      </div>
+      <div className='flex items-center gap-2'>
+        <MdOutlineCalendarMonth />
+        <p> April 8, 2024</p>
+      </div>
+      <button className='border border-gray-300 rounded-full w-10 h-10 flex items-center justify-center'>
+        <IoNotificationsOutline className='w-6 h-6'/>
+      </button>
+      <button className='border border-gray-300 rounded-full w-64 h-16 flex items-center justify-center'>
         <div><CgProfile /></div>
         <div>
-        <p>Adegoke Oyindamola</p>
-        <p className='text-[13px] text-[#8c8998]'>adegokeoyinda.86@gmail.com</p>
+          <p>Adegoke Oyindamola</p>
+          <p className='text-sm text-gray-600'>adegokeoyinda.86@gmail.com</p>
         </div>
         <div>
-        <MdOutlineKeyboardArrowDown className='w-[25px] h-[25px]'/>
+          <MdOutlineKeyboardArrowDown className='w-6 h-6'/>
         </div>
-       </button>
+      </button>
     </div>
   )
 }

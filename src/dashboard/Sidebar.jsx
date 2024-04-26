@@ -73,7 +73,7 @@ const Sidebar = () => {
     })
 
   return (
-    <div className='w-[80px] border border-[#F5F5F5] flex justify-center items-center flex-col gap-[1.5rem]'>
+    <div className='w-[80px]  shadow border-r border-gray-200 flex justify-center items-center flex-col gap-[1.5rem]'>
         <div>
          <img src={vector} alt='vector'/>
         </div>
