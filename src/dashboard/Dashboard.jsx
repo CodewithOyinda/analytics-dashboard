@@ -2,6 +2,7 @@ import React from 'react';
 import Sidebar from './Sidebar';
 import Topbar from './Topbar';
 import Salestrend from './Salestrend';
+import Orders from './Orders';
 
 const Dashboard = () => {
   return (
@@ -12,6 +13,7 @@ const Dashboard = () => {
         <div className='px-14 mt-16'>
           {/* Content for the dashboard */}
           <Salestrend/>
+          <Orders/>
         </div>
       </div>
     </div>
