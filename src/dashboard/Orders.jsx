@@ -4,6 +4,7 @@ import jaydon from './assets/jaydon.png';
 import corey from './assets/corey.png';
 import cooper from './assets/cooper.png';
 import philip from './assets/phillip.png';
+import view from './assets/download.svg';
 
 const Orders = () => {
   const lastOrders = [
@@ -52,7 +53,7 @@ const Orders = () => {
   const [orders, setOrders] = useState(lastOrders);
 
   return (
-    <div>
+    <div className='flex gap-[1rem]'>
       <div className='bg-[#fafafa] rounded-[1rem] w-[700px] pl-[20px] pr-[20px]'>
         <div className='flex justify-between text-[18px]'>
           <p className='font-[600]'>Last Orders</p>
@@ -60,7 +61,7 @@ const Orders = () => {
         </div>
       <div className='flex gap-[2rem] align-middle justify-between items-center border-b border-gray-300 h-[60px] text-[#9ca4ab] font-[600] text-[18px]'>
           <p>Name</p>
-          <p>Date</p>
+          <p className='pl-[70px]'>Date</p>
           <p>Amount</p>
           <p>Status</p>
           <p>Invoice</p>
@@ -68,15 +69,30 @@ const Orders = () => {
         {orders &&
          orders.map((order, index) =>(
           <div key={index} className='flex gap-[2rem] align-middle justify-between items-center border-b border-gray-300 h-[60px] text-[18px]'>
+            <div className='flex gap-[0.3rem]'>
              <img src={order.img} alt='avatar'/>
              <p>{order.name}</p>
-             <p>{order.date}</p>
+             </div>
+             <p className='text-[#73737c]'>{order.date}</p>
              <p>{order.amount}</p>
-             <p>{order.status}</p>
-             <p>{order.invoice}</p>
+             <p style={{ color: order.status === 'Paid' ? '#34caa5' : '#ed544e' }}>{order.status}</p>
+             <div className='flex gap-[0.3rem]'>
+             <img src={view} alt='view'/> <p className='text-[14px]'>{order.invoice}</p>
+             </div>
           </div>
          ))
         }
+      </div>
+      <div className='bg-[#fafafa] rounded-[1rem] w-[400px] pl-[20px] pr-[20px]'>
+         <div className='flex justify-between text-[18px]'>
+          <p className='font-[600]'>Top Platform</p>
+          <p className='text-[#34caa5]'>See All</p>
+         </div>
+         <p>Book Bazaar</p>
+         <div className='flex justify-between'>
+          <p>$2,500,000</p>
+          <p>15%</p>
+         </div>
       </div>
     </div>
   )
