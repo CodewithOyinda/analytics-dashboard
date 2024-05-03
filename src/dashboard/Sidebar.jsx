@@ -103,7 +103,7 @@ const Sidebar = () => {
               onClick={()=> setTheme(opt.text)}
               className={`md:w-8 md:h-8 w-5 h-5 md:leading-9 leading-6 md:text-xl text-[16px] rounded-full m-1 ${
                 theme === opt.text && 'text-[#b2abab] bg-[#34caa5] rounded-[0.2rem]'
-              } ${theme === 'light' && opt.text === 'light' && 'text-[#fafafa] bg-[#fee6ed] rounded-[0.2rem]'}`}
+              } ${theme === 'light' && opt.text === 'light' && 'text-[#fafafa] bg-[#34caa5] rounded-[0.2rem]'}`}
             >
               <ion-icon name={opt.icon}></ion-icon>
               </button>

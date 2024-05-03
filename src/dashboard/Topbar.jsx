@@ -2,7 +2,6 @@ import React from 'react';
 import { MdOutlineCalendarMonth , MdOutlineKeyboardArrowDown } from "react-icons/md";
 import { IoNotificationsOutline } from "react-icons/io5";
 import { CiSearch } from "react-icons/ci";
-import { CgProfile } from "react-icons/cg";
 import profile from './assets/profile.png';
 
 const Topbar = () => {
@@ -12,7 +11,7 @@ const Topbar = () => {
       <div className='flex items-center relative'>
         <CiSearch />
         <input
-          className='border w-64 h-10 p-2 rounded-lg'
+          className='border w-64 h-10 p-4 rounded-[2rem]'
           type='text'
           placeholder='Search...'
         />
@@ -21,7 +20,7 @@ const Topbar = () => {
         <button className='border border-gray-300 dark:bg-[#34caa5] rounded-full w-10 h-10 flex items-center justify-center'>
         <MdOutlineCalendarMonth />
         </button>
-        <p> April 8, 2024</p>
+        <p>April 8, 2024</p>
       </div>
       <button className='border border-gray-300 dark:bg-[#34caa5] rounded-full w-10 h-10 flex items-center justify-center'>
         <IoNotificationsOutline className='w-6 h-6'/>
