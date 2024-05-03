@@ -12,10 +12,12 @@ const Salestrend = () => {
   return (
     <div>
       <div className="flex">
-        <div>Sales trend</div>
+        <div>Sales trend
+          
+        </div>
         <div>
           <div className="flex gap-[2rem] mt-[25px]">
-            <div className="bg-[#fafafa] dark:bg-[#1e293b] h-[200px] w-[240px] p-[20px] overflow-y-auto rounded-[1rem] ">
+            <div className="bg-[#fafafa] dark:bg-[#1e293b] h-[200px] w-[240px] p-[20px]  rounded-[1rem] ">
               <div className="flex justify-between">
                 <div className="border border-[#e7e7e7] rounded-[50%] w-[40px] h-[40px] flex items-center justify-center align-middle">
                 <img src={boxtick} alt="boxtick" />
@@ -32,7 +34,7 @@ const Salestrend = () => {
                 <p>vs. previous month</p>
               </div>
             </div>
-            <div className="bg-[#fafafa] dark:bg-[#1e293b] h-[200px] w-[240px] p-[20px] overflow-x-auto rounded-[1rem]">
+            <div className="bg-[#fafafa] dark:bg-[#1e293b] h-[200px] w-[240px] p-[20px] rounded-[1rem]">
               <div className="flex justify-between">
                 <div className="border border-[#e7e7e7] rounded-[50%] w-[40px] h-[40px] flex items-center justify-center align-middle">
                 <img src={rotate} alt="rotate" />
@@ -51,7 +53,7 @@ const Salestrend = () => {
             </div>
           </div>
           <div className="flex gap-[2rem] mt-[25px]">
-            <div className="bg-[#fafafa] dark:bg-[#1e293b] h-[200px] w-[240px] p-[20px] overflow-x-auto rounded-[1rem]">
+            <div className="bg-[#fafafa] dark:bg-[#1e293b] h-[200px] w-[240px] p-[20px] rounded-[1rem]">
               <div className="flex justify-between">
                 <div className="border border-[#e7e7e7] rounded-[50%] w-[40px] h-[40px] flex items-center justify-center align-middle">
                 <img src={cart} alt="cart" />
@@ -68,7 +70,7 @@ const Salestrend = () => {
                 <p>vs. previous month</p>
               </div>
             </div>
-            <div className="bg-[#fafafa] dark:bg-[#1e293b] h-[200px] w-[240px] p-[20px] overflow-x-auto rounded-[1rem]">
+            <div className="bg-[#fafafa] dark:bg-[#1e293b] h-[200px] w-[240px] p-[20px] rounded-[1rem]">
               <div className="flex justify-between">
                 <div className="border border-[#e7e7e7] rounded-[50%] w-[40px] h-[40px] flex items-center justify-center align-middle">
                 <img src={coin} alt="coin" />
