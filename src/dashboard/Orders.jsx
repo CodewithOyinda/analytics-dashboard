@@ -54,7 +54,7 @@ const Orders = () => {
 
   return (
     <div className='flex gap-[1rem]'>
-      <div className='bg-[#fafafa] dark:bg-[#1e293b] rounded-[1rem] w-[700px] pl-[20px] pr-[20px]'>
+      <div className='bg-[#ffffff] dark:bg-[#1e293b] rounded-[1rem] w-[700px] pl-[20px] pr-[20px]'>
         <div className='flex justify-between text-[18px]'>
           <p className='font-[600]'>Last Orders</p>
           <p className='text-[#34caa5]'>See All</p>
@@ -83,7 +83,7 @@ const Orders = () => {
          ))
         }
       </div>
-      <div className='bg-[#fafafa] dark:bg-[#1e293b] rounded-[1rem] w-[400px] pl-[20px] pr-[20px] text-[18px]'>
+      <div className='bg-[#ffffff] dark:bg-[#1e293b] rounded-[1rem] w-[400px] pl-[20px] pr-[20px] text-[18px]'>
          <div className='flex justify-between text-[18px]'>
           <p className='font-[600]'>Top Platform</p>
           <p className='text-[#34caa5]'>See All</p>
