@@ -53,37 +53,48 @@ const Orders = () => {
   const [orders, setOrders] = useState(lastOrders);
 
   return (
-    <div className='flex gap-[1rem]'>
+    <div className='flex gap-[1rem] p-[20px]'>
       <div className='bg-[#ffffff] dark:bg-[#1e293b] rounded-[1rem] w-[700px] pl-[20px] pr-[20px]'>
-        <div className='flex justify-between text-[18px]'>
-          <p className='font-[600]'>Last Orders</p>
-          <p className='text-[#34caa5]'>See All</p>
-        </div>
-      <div className='flex gap-[2rem] align-middle justify-between items-center border-b border-gray-300 h-[60px] text-[#9ca4ab] font-[600] text-[18px]'>
-          <p>Name</p>
-          <p className='pl-[70px]'>Date</p>
-          <p>Amount</p>
-          <p>Status</p>
-          <p>Invoice</p>
-        </div>
-        {orders &&
-         orders.map((order, index) =>(
-          <div key={index} className='flex gap-[2rem] align-middle justify-between items-center border-b border-gray-300 h-[60px] text-[18px]'>
-            <div className='flex gap-[0.3rem]'>
-             <img src={order.img} alt='avatar'/>
-             <p>{order.name}</p>
-             </div>
-             <p className='text-[#73737c]'>{order.date}</p>
-             <p>{order.amount}</p>
-             <p style={{ color: order.status === 'Paid' ? '#34caa5' : '#ed544e' }}>{order.status}</p>
-             <div className='flex gap-[0.3rem]'>
-             <img src={view} alt='view'/> <p className='text-[14px]'>{order.invoice}</p>
-             </div>
-          </div>
-         ))
-        }
-      </div>
-      <div className='bg-[#ffffff] dark:bg-[#1e293b] rounded-[1rem] w-[400px] pl-[20px] pr-[20px] text-[18px]'>
+  <div className='flex justify-between text-[18px]'>
+    <p className='font-[600]'>Last Orders</p>
+    <p className='text-[#34caa5]'>See All</p>
+  </div>
+  <table className=''>
+    <thead>
+      <tr className='border-b border-gray-300 h-[60px] text-[#9ca4ab] font-[600] text-[18px]'>
+        <th>Name</th>
+        <th className='pl-[70px]'>Date</th>
+        <th className='pl-[40px]'>Amount</th>
+        <th className='pl-[40px]'>Status</th>
+        <th className='pl-[40px]'>Invoice</th>
+      </tr>
+    </thead>
+    <tbody>
+      {orders &&
+        orders.map((order, index) => (
+          <tr key={index} className='border-b border-gray-300 h-[60px] text-[18px]'>
+            <td>
+              <div className='flex gap-[0.3rem]'>
+                <img src={order.img} alt='avatar'/>
+                {order.name}
+              </div>
+            </td>
+            <td className='pl-[70px] text-[#73737c]'>{order.date}</td>
+            <td className="pl-[40px]">{order.amount}</td>
+            <td className="pl-[40px]" style={{ color: order.status === 'Paid' ? '#34caa5' : '#ed544e' }}>{order.status}</td>
+            <td>
+              <div className='flex pl-[40px] gap-[0.3rem]'>
+                <img src={view} alt='view'/>
+                <span className='text-[14px]'>{order.invoice}</span>
+              </div>
+            </td>
+          </tr>
+        ))}
+    </tbody>
+  </table>
+</div>
+
+<div className='bg-[#ffffff] dark:bg-[#1e293b] rounded-[1rem] w-[460px] pl-[20px] pr-[20px] text-[18px]'>
          <div className='flex justify-between text-[18px]'>
           <p className='font-[600]'>Top Platform</p>
           <p className='text-[#34caa5]'>See All</p>
