@@ -99,8 +99,8 @@ const Salestrend = () => {
 
   return (
     <div>
-      <div className="flex gap-[1rem] p-[20px]">
-        <div className="w-[650px] h-[400px] bg-[#ffffff] dark:bg-[#1e293b] mt-[25px] rounded-[1rem]">
+      <div className="flex gap-[1rem] p-[20px] md:flex-row flex-col">
+        <div className="md:w-[650px] w-[300px] h-[400px] bg-[#ffffff] dark:bg-[#1e293b] mt-[25px] rounded-[1rem] overflow-x-scroll">
           <div className="flex justify-between">
             <p className='font-[600] text-[18px]'>Sales Trends</p>
             <div className="flex">
@@ -125,14 +125,14 @@ const Salestrend = () => {
           <YAxis ticks={[10000, 20000, 30000, 40000, 50000, 60000]} />
           <Tooltip />
           <Legend />
-          <Bar dataKey="pv" fill="#eafaf6" activeBar={<Rectangle fill="eafaf6" stroke="eafaf6" />} />
+          <Bar dataKey="pv" fill="#eafaf6" activeBar={<Rectangle fill="blue" stroke="#eafaf6"  />} />
           {/* <Bar dataKey="uv" fill="#82ca9d" activeBar={<Rectangle fill="gold" stroke="purple" />} /> */}
         </BarChart>
       </ResponsiveContainer>
         </div>
         <div>
-          <div className="flex gap-[2rem] mt-[25px]">
-            <div className="bg-[#ffffff] dark:bg-[#1e293b] h-[200px] w-[240px] p-[20px]  rounded-[1rem] ">
+          <div className="flex gap-[2rem] mt-[25px] md:flex-row flex-col">
+            <div className="bg-[#ffffff] dark:bg-[#1e293b] h-[200px] md:w-[240px] w-[300px] p-[20px]  rounded-[1rem] ">
               <div className="flex justify-between">
                 <div className="border border-[#e7e7e7] rounded-[50%] w-[40px] h-[40px] flex items-center justify-center align-middle">
                 <img src={boxtick} alt="boxtick" />
@@ -149,7 +149,7 @@ const Salestrend = () => {
                 <p>vs. previous month</p>
               </div>
             </div>
-            <div className="bg-[#ffffff] dark:bg-[#1e293b] h-[200px] w-[240px] p-[20px] rounded-[1rem]">
+            <div className="bg-[#ffffff] dark:bg-[#1e293b] h-[200px] md:w-[240px] w-[300px] p-[20px] rounded-[1rem]">
               <div className="flex justify-between">
                 <div className="border border-[#e7e7e7] rounded-[50%] w-[40px] h-[40px] flex items-center justify-center align-middle">
                 <img src={rotate} alt="rotate" />
@@ -167,8 +167,8 @@ const Salestrend = () => {
               </div>
             </div>
           </div>
-          <div className="flex gap-[2rem] mt-[25px]">
-            <div className="bg-[#ffffff] dark:bg-[#1e293b] h-[200px] w-[240px] p-[20px] rounded-[1rem]">
+          <div className="flex gap-[2rem] mt-[25px] md:flex-row flex-col">
+            <div className="bg-[#ffffff] dark:bg-[#1e293b] h-[200px] md:w-[240px] w-[300px] p-[20px] rounded-[1rem]">
               <div className="flex justify-between">
                 <div className="border border-[#e7e7e7] rounded-[50%] w-[40px] h-[40px] flex items-center justify-center align-middle">
                 <img src={cart} alt="cart" />
@@ -185,7 +185,7 @@ const Salestrend = () => {
                 <p>vs. previous month</p>
               </div>
             </div>
-            <div className="bg-[#ffffff] dark:bg-[#1e293b] h-[200px] w-[240px] p-[20px] rounded-[1rem]">
+            <div className="bg-[#ffffff] dark:bg-[#1e293b] h-[200px] md:w-[240px] w-[300px] p-[20px] rounded-[1rem]">
               <div className="flex justify-between">
                 <div className="border border-[#e7e7e7] rounded-[50%] w-[40px] h-[40px] flex items-center justify-center align-middle">
                 <img src={coin} alt="coin" />

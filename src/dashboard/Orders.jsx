@@ -53,8 +53,8 @@ const Orders = () => {
   const [orders, setOrders] = useState(lastOrders);
 
   return (
-    <div className='flex gap-[1rem] p-[20px]'>
-      <div className='bg-[#ffffff] dark:bg-[#1e293b] rounded-[1rem] w-[700px] pl-[20px] pr-[20px]'>
+    <div className='flex gap-[1rem] p-[20px] md:flex-row flex-col'>
+      <div className='bg-[#ffffff] dark:bg-[#1e293b] rounded-[1rem] md:w-[700px] w-[300px] overflow-x-scroll pl-[20px] pr-[20px] '>
   <div className='flex justify-between text-[18px]'>
     <p className='font-[600]'>Last Orders</p>
     <p className='text-[#34caa5]'>See All</p>
@@ -94,7 +94,7 @@ const Orders = () => {
   </table>
 </div>
 
-<div className='bg-[#ffffff] dark:bg-[#1e293b] rounded-[1rem] w-[460px] pl-[20px] pr-[20px] text-[18px]'>
+<div className='bg-[#ffffff] dark:bg-[#1e293b] rounded-[1rem] md:w-[460px] w-[300px] pl-[20px] pr-[20px] text-[18px]'>
          <div className='flex justify-between text-[18px]'>
           <p className='font-[600]'>Top Platform</p>
           <p className='text-[#34caa5]'>See All</p>
