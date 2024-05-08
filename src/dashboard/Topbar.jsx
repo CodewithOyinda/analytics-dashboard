@@ -29,7 +29,7 @@ const Topbar = () => {
         <div className='border-2 border-[#ffffff] w-7 h-7 rounded-full flex justify-center items-center'>
          <img src={profile} alt='profile' className='w-6 h-6 rounded-full'/>
         </div>
-        <div>
+        <div className=' '>
           <p>Adegoke Oyindamola</p>
           <p className='text-sm text-gray-600'>adegokeoyinda.86@gmail.com</p>
         </div>
