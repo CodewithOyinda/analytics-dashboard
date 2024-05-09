@@ -15,6 +15,7 @@ import setting from '../dashboard/assets/setting-2.svg';
 
 const Sidebar = () => {
 
+
     const [theme, setTheme] = useState(
         localStorage.getItem("theme") ? localStorage.getItem("theme") : "system"
       );
@@ -74,6 +75,7 @@ const Sidebar = () => {
 
   return (
     <div className='w-[80px] h-[100vh] shadow border-r border-gray-200 flex justify-center items-center flex-col gap-[1.5rem]'>
+       
         <div>
          <img src={vector} alt='vector'/>
         </div>
