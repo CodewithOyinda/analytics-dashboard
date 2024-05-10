@@ -74,7 +74,7 @@ const Sidebar = () => {
     })
 
   return (
-    <div className='w-[80px] h-[100vh] shadow border-r border-gray-200 flex justify-center items-center flex-col gap-[1.5rem]'>
+    <div className='w-[80px] h-[100vh] shadow border-r border-gray-200 flex sticky justify-center items-center flex-col gap-[1.5rem] mt-[-65px]'>
        
         <div>
          <img src={vector} alt='vector'/>
@@ -114,7 +114,7 @@ const Sidebar = () => {
           
         </div>
         <div>
-         <img src={arrow} alt='arrow'/>
+         <img src={arrow} alt='arrow' />
         </div>
         <div>
          <img src={setting} alt='setting'/>
