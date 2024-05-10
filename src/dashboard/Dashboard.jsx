@@ -20,8 +20,8 @@ const Dashboard = () => {
     //     </div>
     //   </div>
     // </div>
-    <div className="w-full relative flex lg:flex-ro flex-col transition-all bg-[#f7f8fa] dark:text-gray-100 dark:bg-slate-900 duration-500 overflow-hidden h-screen">
-       <div className={`${openModal ? 'z-20' :"z-[30]"}`}>
+    <div className="w-full flex flex-col transition-all bg-[#f7f8fa] dark:text-gray-100 dark:bg-slate-900 duration-500 overflow-hidden h-screen fixed">
+       <div className={`${openModal ? 'z-20' :"z-auto"}`}>
         <Topbar openMenu={openMenu} setopenMenu={setopenMenu} header={header}/>
       </div>
       <div className="w-full z-[20] flex h-full">

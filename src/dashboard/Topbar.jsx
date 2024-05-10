@@ -6,12 +6,12 @@ import profile from './assets/profile.png';
 
 const Topbar = () => {
   return (
-    <div className='flex justify-between items-center px-6 h-16 ml-[20px] fixed top-0 left-14 right-0 shadow border-b border-gray-200'>
+    <div className='flex justify-between items-center px-6 h-16 md:ml-[76px] ml-[80px]  sticky top-0 left-14 right-0 shadow border-b border-gray-200'>
       <p className='hidden md:block'>Dashboard</p>
       <div className='flex items-center relative'>
-        <CiSearch className='hidden md:block'/>
+        <CiSearch className='hidden md:block absolute pl-[10px] w-[30px]'/>
         <input
-          className='border w-64 h-10 p-4 rounded-[2rem] hidden md:block'
+          className='border w-64 h-10 pl-8 rounded-[2rem] hidden md:block'
           type='text'
           placeholder='Search...'
         />

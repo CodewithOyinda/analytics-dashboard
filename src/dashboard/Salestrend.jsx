@@ -98,9 +98,9 @@ const Salestrend = () => {
 
 
   return (
-    <div>
+    <div className="">
       <div className="flex gap-[1rem] p-[20px] md:flex-row flex-col">
-        <div className="md:w-[650px] w-[300px] h-[400px] bg-[#ffffff] dark:bg-[#1e293b] mt-[25px] rounded-[1rem] overflow-x-scroll">
+        <div className="md:w-[650px] w-[300px] h-[400px] bg-[#ffffff] dark:bg-[#1e293b] mt-[px] rounded-[1rem] overflow-x-scroll">
           <div className="flex justify-between">
             <p className='font-[600] text-[18px]'>Sales Trends</p>
             <div className="flex">
@@ -131,7 +131,7 @@ const Salestrend = () => {
       </ResponsiveContainer>
         </div>
         <div>
-          <div className="flex gap-[2rem] mt-[25px] md:flex-row flex-col">
+          <div className="flex gap-[2rem] mt-[px] md:flex-row flex-col">
             <div className="bg-[#ffffff] dark:bg-[#1e293b] h-[200px] md:w-[240px] w-[300px] p-[20px]  rounded-[1rem] ">
               <div className="flex justify-between">
                 <div className="border border-[#e7e7e7] rounded-[50%] w-[40px] h-[40px] flex items-center justify-center align-middle">
