@@ -1,4 +1,4 @@
-import React from "react";
+import React, {useState} from "react";
 import boxtick from "../dashboard/assets/box-tick.svg";
 import buy from "./assets/buy.svg";
 import trendingup from "./assets/trending-up.svg";
@@ -8,124 +8,168 @@ import trendingdown from './assets/trending-down.svg';
 import cart from './assets/shopping-cart.svg';
 import coin from './assets/coin.svg';
 import { BarChart, Bar, Rectangle, XAxis, YAxis, CartesianGrid, Tooltip, Legend, ResponsiveContainer } from 'recharts';
-import { MdOutlineKeyboardArrowDown } from "react-icons/md";
+import { MdOutlineKeyboardArrowDown, MdEventNote } from "react-icons/md";
 
-const CustomTick = ({ x, y, payload }) => {
-  return (
-    <g transform={`translate(${x},${y})`}>
-      <text x={0} y={0} dy={16} textAnchor="middle" fill="#666">{payload.value}</text>
-    </g>
-  );
-};
+
 
 const Salestrend = () => {
+  const [filterOption, setFilterOption] = useState('monthly');
+  const [dropdownOpen, setDropdownOpen] = useState(false);
 
-  const data = [
+  const monthlyData = [
     {
       name: 'Jan',
-      // uv: 4000,
       pv: 8000,
-      amt: 2400,
     },
     {
       name: 'Feb',
-      // uv: 3000,
       pv: 15000,
-      amt: 2210,
     },
     {
       name: 'Mar',
-      // uv: 2000,
       pv: 3000,
-      amt: 2290,
     },
     {
       name: 'Apr',
-      // uv: 2780,
       pv: 23000,
-      amt: 2000,
     },
     {
       name: 'May',
-      // uv: 1890,
       pv: 8000,
-      amt: 2181,
     },
     {
       name: 'Jun',
-      // uv: 2390,
       pv: 45000,
-      amt: 2500,
     },
     {
       name: 'Jul',
-      // uv: 3490,
       pv: 8000,
-      amt: 2100,
     },
     {
       name: 'Aug',
-      // uv: 3490,
       pv: 16000,
-      amt: 2100,
     },
     {
       name: 'Sep',
-      // uv: 3490,
       pv: 40000,
-      amt: 2100,
     },
     {
       name: 'Oct',
-      // uv: 3490,
       pv: 4000,
-      amt: 2100,
     },
     {
       name: 'Nov',
-      // uv: 3490,
       pv: 30000,
-      amt: 2100,
     },
     {
       name: 'Dec',
-      // uv: 3490,
       pv: 25000,
-      amt: 2100,
     },
   ];
   
+  const weeklyData = [
+    {
+      name: 'Wk1',
+      pv: 8000,
+    },
+    {
+      name: 'Wk2',
+      pv: 15000,
+    },
+    {
+      name: 'Wk3',
+      pv: 3000,
+    },
+    {
+      name: 'Wk4',
+      pv: 23000,
+    },
+    {
+      name: 'Wk5',
+      pv: 8000,
+    },
+    {
+      name: 'Wk6',
+      pv: 45000,
+    },
+    {
+      name: 'Wk7',
+      pv: 8000,
+    },
+    {
+      name: 'Wk8',
+      pv: 16000,
+    },
+    {
+      name: 'Wk9',
+      pv: 40000,
+    },
+    {
+      name: 'Wk10',
+      pv: 4000,
+    },
+    {
+      name: 'Wk11',
+      pv: 30000,
+    },
+    {
+      name: 'Wk12',
+      pv: 25000,
+    },
+  ];
+ 
+
+  const toggleDropdown = () => {
+    setDropdownOpen(!dropdownOpen);
+  };
+
+  const handleFilterChange = (option) => {
+    setFilterOption(option);
+    setDropdownOpen(false);
+  };
+  const data = filterOption === 'monthly' ? monthlyData : weeklyData;
 
 
   return (
     <div className="">
       <div className="flex gap-[1rem] p-[20px] md:flex-row flex-col">
-        <div className="md:w-[650px] w-[300px] h-[400px] bg-[#ffffff] dark:bg-[#1e293b] mt-[px] rounded-[1rem] overflow-x-scroll">
+        <div className="md:w-[650px] w-[300px] h-[400px] bg-[#ffffff] dark:bg-[#1e293b] mt-[px] rounded-[1rem] overflow-x-scroll p-[20px]">
           <div className="flex justify-between">
             <p className='font-[600] text-[18px]'>Sales Trends</p>
-            <div className="flex">
-            <p>Sort By: </p>
-            <button className="border border-gray-300 rounded-[1rem] w-[80px] h-[30px] flex text-[12px] justify-center items-center">Monthly <MdOutlineKeyboardArrowDown className='w-6 h-6'/> </button>
+            <div className="relative">
+              <div className="flex gap-[0.3rem]">
+              <div><p>Sort By: </p></div>
+            {/* <button className="border border-gray-300 rounded-[1rem] w-[80px] h-[30px] flex text-[12px] justify-center items-center">Monthly <MdOutlineKeyboardArrowDown className='w-6 h-6'/> </button> */}
+            <button className={`border border-gray-300 rounded-[1rem] w-[80px] p-[10px] h-[30px] flex text-[12px] justify-between items-center ${dropdownOpen ? '' : ''}`} onClick={toggleDropdown}>
+                {filterOption === 'monthly' ? 'Monthly' : 'Weekly'} <MdOutlineKeyboardArrowDown className='w-6 h-6'/>
+              </button>
+              {dropdownOpen && (
+                <div className="absolute top-[38px] right-0 bg-white dark:bg-gray-800 shadow-md rounded-md">
+                  <button className="flex items-center gap-[0.5rem] w-[200px] py-2 px-4 text-left hover:bg-[#34caa5] hover:text-[#fafafa]" onClick={() => handleFilterChange('monthly')}> <MdEventNote /> Monthly</button>
+                  <button className="flex items-center gap-[0.5rem] w-[200px] py-2 px-4 text-left hover:bg-[#34caa5] hover:text-[#fafafa]" onClick={() => handleFilterChange('weekly')}> <MdEventNote /> Weekly</button>
+                </div>
+              )}
+              </div>
             </div>
           </div>
-        <ResponsiveContainer width="100%" height="100%">
+        <ResponsiveContainer width="100%" height="100%" className="pt-[30px]">
         <BarChart
           width={500}
           height={300}
           data={data}
           margin={{
             top: 5,
-            right: 30,
-            left: 20,
+            right: 5,
+            left: 5,
             bottom: 5,
           }}
         >
-          <CartesianGrid strokeDasharray="3 3" />
-          <XAxis dataKey="name" interval={0} tick={<CustomTick />} />
-          <YAxis ticks={[10000, 20000, 30000, 40000, 50000, 60000]} />
+         <CartesianGrid stroke="rgba(0, 0, 0, 0.15)" vertical={false} strokeDasharray="3 3"/>
+          <XAxis dataKey="name" interval={0}  />
+          <YAxis ticks={[0, 10000, 20000, 30000, 40000, 50000, 60000]} />
           <Tooltip />
           <Legend />
-          <Bar dataKey="pv" fill="#eafaf6" activeBar={<Rectangle fill="blue" stroke="#eafaf6"  />} />
+          <Bar dataKey="pv" fill="#eafaf6" activeFill="#eafaf6" />
           {/* <Bar dataKey="uv" fill="#82ca9d" activeBar={<Rectangle fill="gold" stroke="purple" />} /> */}
         </BarChart>
       </ResponsiveContainer>
