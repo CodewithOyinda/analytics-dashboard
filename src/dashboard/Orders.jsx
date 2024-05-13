@@ -5,6 +5,7 @@ import corey from './assets/corey.png';
 import cooper from './assets/cooper.png';
 import philip from './assets/phillip.png';
 import view from './assets/download.svg';
+import Modal from './Modal';
 
 const Orders = () => {
   const lastOrders = [
@@ -50,6 +51,10 @@ const Orders = () => {
     },
   ];
 
+  const [showModal, setShowModal] = useState(false);
+
+    const handleOnClose = () => setShowModal(false)
+
   const [orders, setOrders] = useState(lastOrders);
 
   return (
@@ -79,14 +84,16 @@ const Orders = () => {
                 {order.name}
               </div>
             </td>
-            <td className='pl-[70px] text-[#73737c]'>{order.date}</td>
+            <td className='pl-[40px] text-[#73737c]'>{order.date}</td>
             <td className="pl-[40px]">{order.amount}</td>
             <td className="pl-[40px]" style={{ color: order.status === 'Paid' ? '#34caa5' : '#ed544e' }}>{order.status}</td>
             <td>
               <div className='flex pl-[40px] gap-[0.3rem]'>
-                <img src={view} alt='view'/>
+                <img src={view} alt='view' onClick={() => setShowModal(true)}/>
                 <span className='text-[14px]'>{order.invoice}</span>
+                
               </div>
+              <Modal onClose={handleOnClose} visible={showModal}/>
             </td>
           </tr>
         ))}

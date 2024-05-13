@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
-import { MdOutlineCalendarMonth, MdOutlineKeyboardArrowDown, MdEventNote } from "react-icons/md";
+import { MdOutlineCalendarMonth, MdOutlineKeyboardArrowDown, MdEventNote, MdEdit } from "react-icons/md";
+import { BiLogOut } from "react-icons/bi";
 import { IoNotificationsOutline } from "react-icons/io5";
 import { CiSearch } from "react-icons/ci";
 import profile from './assets/profile.png';
@@ -43,8 +44,8 @@ const Topbar = () => {
       </button>
       {dropdownOpen && (
         <div className="absolute top-[38px] right-0 bg-white dark:bg-gray-800 shadow-md rounded-md">
-          <button className="flex items-center gap-[0.5rem] w-[200px] py-2 px-4 text-left hover:bg-[#34caa5] hover:text-[#fafafa]"> <MdEventNote /> Go to Home</button>
-          <button className="flex items-center gap-[0.5rem] w-[200px] py-2 px-4 text-left hover:bg-[#34caa5] hover:text-[#fafafa]"> <MdEventNote /> Logout</button>
+          <button className="flex items-center gap-[0.5rem] w-[200px] py-2 px-4 text-left hover:bg-[#34caa5] hover:text-[#fafafa]"> <MdEdit /> Go to Home</button>
+          <button className="flex items-center gap-[0.5rem] w-[200px] py-2 px-4 text-left hover:bg-[#34caa5] hover:text-[#fafafa]"> <BiLogOut /> Logout</button>
         </div>
       )}
     </div>
